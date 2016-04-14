@@ -1,0 +1,16 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+
+body {
+  background: url("/assets/bg_croatia.jpeg") no-repeat;
+  background-size: cover;
+  font-family: 'Oswald', sans-serif;
+}
+.navbar-default .navbar-brand {
+  font-family: 'Oswald';
+  color: navy;
+  font-size: 200%;
+}

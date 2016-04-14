@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+
+<h1><%= @car.car_make %>, <%= @car.car_model %></h1>
+<h3> Year: <%= @car.year %> </h3>
+<h3>Milage: <%= @car.milage %></h3>
+<h3> Location: <%= @car.location %></h3>
+<%= image_tag @car.avatar.url, class: "img-responsive" %>
+
+<br>
+<div class="btn-group">
+  <%= link_to 'Edit', edit_car_path(@car), class: "btn btn-default" %> 
+  <%= link_to 'Back', cars_path, class: "btn btn-default" %>
+</div>
+<br>

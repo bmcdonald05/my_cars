@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Find Your Next Car!</h1>
+
+<div class="row">
+  <div class="col-md-12">
+  <% @cars.each do |car| %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">    
+          <div class="col-md-8">
+            <h2><%= link_to car.car_make, car %></h2>
+            <h2><%= car.car_model %></h2>
+            <h4>Year: <%= car.year %></h4>
+            <h4>Milage: <%= car.milage %></h4>
+            <h4>Location: <%= car.location %></h4>
+            <div class="btn-group">
+              <%= link_to 'Edit', edit_car_path(car), class: "btn btn-default" %>
+              <%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <%= image_tag car.avatar.url(:medium), class: "img-responsive" %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <br>
+
+  <%= link_to 'New Car', new_car_path, class: "btn btn-info" %>
+
+
