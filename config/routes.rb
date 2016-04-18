@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  resources :dealers
   resources :cars
 
   root "cars#index"
+
+  get "dealers" => "dealers#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
