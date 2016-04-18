@@ -1,3 +1,3 @@
 class Dealer < ActiveRecord::Base
-	has_many: cars
+	has_many :cars
 end

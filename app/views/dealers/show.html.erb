@@ -4,6 +4,36 @@
   <strong>Name:</strong>
   <%= @dealer.name %>
 </p>
+<h2>Current Cars:</h2>
+
+<div class="row">
+	<% @dealer.cars.each do |car| %>
+	<div class="col-md-3">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<p><strong><%= car.car_make %></strong></p>
+				<p><%= car.car_model %></p>
+			</div>
+		</div>
+	</div>
+	<% end %>
+</div>
+
 
 <%= link_to 'Edit', edit_dealer_path(@dealer) %> |
 <%= link_to 'Back', dealers_path %>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">Make</div>
+	  <table class="table">
+	  <% @dealer.cars.each do |car| %>
+	   <td><%= car.car_make %></td>
+	   <td><%= car.car_model %></td>
+	  </table>
+  <% end %>
+</div>
+
+
+

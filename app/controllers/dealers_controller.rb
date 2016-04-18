@@ -10,6 +10,7 @@ class DealersController < ApplicationController
   # GET /dealers/1
   # GET /dealers/1.json
   def show
+    @car = Car.all 
   end
 
   # GET /dealers/new

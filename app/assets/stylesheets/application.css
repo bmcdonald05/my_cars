@@ -31,3 +31,6 @@ body {
 .navbar-item {
 	color: #F0F3BD;
 }
+.panel-heading{
+  font-size: 200%;
+}
