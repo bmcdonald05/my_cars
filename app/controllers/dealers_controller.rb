@@ -20,6 +20,7 @@ class DealersController < ApplicationController
 
   # GET /dealers/1/edit
   def edit
+
   end
 
   # POST /dealers

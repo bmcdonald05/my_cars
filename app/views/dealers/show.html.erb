@@ -1,39 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @dealer.name %>
-</p>
-<h2>Current Cars:</h2>
+
+<h1><%= @dealer.name %><h1>
+
+<h2>Current Cars In Stock:</h2>
+
 
 <div class="row">
-	<% @dealer.cars.each do |car| %>
-	<div class="col-md-3">
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<p><strong><%= car.car_make %></strong></p>
-				<p><%= car.car_model %></p>
-			</div>
-		</div>
-	</div>
-	<% end %>
+  <div class="col-md-12">
+  <% @dealer.cars.each do |car| %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">    
+          <div class="col-md-8">
+            <h2><%= link_to car.car_make, car %></h2>
+            <h2><%= car.car_model %></h2>
+            <h4>Year: <%= car.year %></h4>
+            <h4>Milage: <%= car.milage %></h4>
+          </div>
+          <div class="col-md-4 index_image">
+            <%= image_tag car.avatar.url(:medium), class: "img-responsive" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
 
+<div>
+	<%= link_to 'New Car', new_car_path, class: "btn btn-primary" %>
+</div>
+<br>
 
 <%= link_to 'Edit', edit_dealer_path(@dealer) %> |
 <%= link_to 'Back', dealers_path %>
-
-
-
-<div class="panel panel-default">
-  <div class="panel-heading">Make</div>
-	  <table class="table">
-	  <% @dealer.cars.each do |car| %>
-	   <td><%= car.car_make %></td>
-	   <td><%= car.car_model %></td>
-	  </table>
-  <% end %>
-</div>
 
 
 
